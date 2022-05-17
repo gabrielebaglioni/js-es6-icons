@@ -1,4 +1,4 @@
-[{
+const icons = [{
         name: 'cat',
         prefix: 'fa-',
         type: 'animal',
@@ -111,3 +111,18 @@
         color: 'blue'
     }
 ];
+
+const conatinerHTML = document.querySelector("container");
+const boxIcon = document.querySelector("#tpl-box-icon").content;
+
+function boxIconHTML(print, elm) {
+    let card = boxIcon.cloneNode(true);
+    card.querySelector("i").classList.add(elm.family, elm.prefix + elm.name, elm.color);
+    card.querySelector("span").innerHTML = elm.name;
+    print.append(card);
+}
+//creo uja funzione per stampare la funzione precedente per tutti gli ogetti
+function printIconHTML(print, elm) {
+    elm.forEach(element => boxIconHTML(print, element));
+}
+printIconHTML(conatinerHTML, icons);
