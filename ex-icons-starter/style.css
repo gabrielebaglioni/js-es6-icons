@@ -11,3 +11,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.container {
+    display: flex;
+}
+
+.box-icon {
+    display: inline;
+    background-color: lightgray;
+}
